@@ -11,7 +11,7 @@ import (
 )
 
 func makeServer(listenAddr string, nodes ...string) *FileServer {
-	validStorageRoot := strings.ReplaceAll(listenAddr, ":", "_") + "_network"
+	validStorageRoot := strings.ReplaceAll(listenAddr, ":", "") + "_network"
 	tcptransportOpts := p2p.TCPTransportOpts{
 		ListenAddr:    listenAddr,
 		HandshakeFunc: p2p.NOPHandshakeFunc,
